@@ -1,0 +1,44 @@
+<section class="hero"><div class="wrap"><div class="hero-grid">
+  <div>
+    <div style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:10px">Склад · самовывоз и доставка</div>
+    <h1>Стройматериалы со склада — без ожидания поставки</h1>
+    <p>Кирпич, блоки, цемент и смеси, пиломатериалы, металл, кровля и отделка. В наличии на складе, отгрузка в день заказа.</p>
+    <div class="btns"><a class="btn btn-acc" href="catalog.html">Открыть каталог</a><a class="btn btn-ghost" href="delivery.html">Доставка и оплата</a></div>
+  </div>
+  <div class="promo"><b>Что важно знать до заказа</b><p>Мы держим ходовые позиции на складе и не продаём «под заказ» как наличие.</p>
+    <ul><li>Остатки обновляются ежедневно</li><li>Отгрузка от одного мешка</li><li>Доставка по городу и области</li><li>Работа с юрлицами и физлицами</li></ul></div>
+</div></div></section>
+<section class="blk"><div class="wrap">
+  <div class="sec-head"><h2>Категории</h2><a href="catalog.html">Все товары →</a></div>
+  <div class="cats-grid" id="cats"></div>
+</div></section>
+<section class="blk" style="background:var(--surf)"><div class="wrap">
+  <div class="sec-head"><h2>Хиты склада</h2><a href="catalog.html?sort=cheap">Сначала дешёвые →</a></div>
+  <div class="grid" id="hits"></div>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="sec-head"><h2>Как это работает</h2></div>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px"><b style="font-family:var(--f);display:block;margin-bottom:6px">1. Выбираете товар</b><p style="color:var(--ink2);font-size:.94rem">Фильтры по категории, цене, бренду и наличию. Поиск ищет по названию и описанию.</p></div>
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px"><b style="font-family:var(--f);display:block;margin-bottom:6px">2. Кладёте в корзину</b><p style="color:var(--ink2);font-size:.94rem">Корзина помнит товары между страницами и перезагрузкой.</p></div>
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px"><b style="font-family:var(--f);display:block;margin-bottom:6px">3. Оформляете заказ</b><p style="color:var(--ink2);font-size:.94rem">Проверяете состав и сумму, оставляете контакты, получаете заказ текстом.</p></div>
+  </div>
+</div></section>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var S=window.STORE, box=document.getElementById('cats');
+  var counts={}; S.products.forEach(function(p){ counts[p.cat]=(counts[p.cat]||0)+1; });
+  box.innerHTML=S.categories.map(function(c){
+    return '<a class="catcard" href="catalog.html?cat='+c[0]+'"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 10 12 4l8 6v10H4z" stroke="#1557c0" stroke-width="1.8" stroke-linejoin="round"/></svg></i><b>'+c[1]+'</b><span>'+counts[c[0]]+' '+((counts[c[0]]%10===1&&counts[c[0]]%100!==11)?'товар':'товаров')+'</span></a>';
+  }).join('');
+  var hits=document.getElementById('hits');
+  hits.innerHTML=S.products.filter(function(p){return p.badge==='хит';}).slice(0,8).map(function(p){
+    var out=p.stock===0;
+    return '<article class="card"><a class="ph" href="product.html?id='+p.id+'"><span class="badge">хит</span>'
+      +'<svg viewBox="0 0 64 64" fill="none"><rect x="12" y="12" width="40" height="40" rx="3" stroke="#4d565e" stroke-width="2"/></svg></a>'
+      +'<div class="body"><span class="cat">'+p.brand+'</span><h3><a href="product.html?id='+p.id+'">'+p.name+'</a></h3>'
+      +'<div class="meta"><span class="dot"></span>в наличии</div>'
+      +'<div class="bottom"><span class="price">'+p.price.toFixed(2)+'<small>BYN/'+p.unit+'</small></span><button class="add" data-add="'+p.id+'">В корзину</button></div></div></article>';
+  }).join('');
+});
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script src="assets/data.js" defer></script>
+<script src="assets/app.js" defer></script>
+
+<title>Контакты | Стройбаза</title>
+<meta name="description" content="Телефон, адрес склада и время работы магазина стройматериалов.">
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Склад в Минске · доставка по городу и области</span><span>Пн–Сб 8:00–19:00 · <b>+375 29 000-00-00</b></span></div></div>
+<header class="site">
+  <div class="wrap hrow">
+    <a class="logo" href="index.html">
+      <i><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke="#8fc0ff" stroke-width="1.8"/></svg></i>
+      <span><b>Стройбаза</b><span>стройматериалы</span></span>
+    </a>
+    <form class="search" id="searchform" role="search">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="#6b757d" stroke-width="2"/><path d="m16 16 4 4" stroke="#6b757d" stroke-width="2"/></svg>
+      <input id="q" type="search" placeholder="Поиск: цемент, кирпич, OSB…" aria-label="Поиск по каталогу">
+      <button type="submit">Найти</button>
+    </form>
+    <div class="hact">
+      <a class="iconbtn" href="delivery.html">Доставка</a>
+      <a class="iconbtn cartbtn" href="cart.html">Корзина <span class="cnt" data-cart-count>0</span></a>
+    </div>
+  </div>
+</header>
+<nav class="cats"><div class="wrap"><ul>
+  <li><a href="catalog.html">Весь каталог</a></li>
+  <li><a href="catalog.html?cat=kirpich">Кирпич и блоки</a></li>
+  <li><a href="catalog.html?cat=smesi">Цемент и смеси</a></li>
+  <li><a href="catalog.html?cat=les">Пиломатериалы</a></li>
+  <li><a href="catalog.html?cat=metall">Металл</a></li>
+  <li><a href="catalog.html?cat=krovlya">Кровля</a></li>
+  <li><a href="catalog.html?cat=otdelka">Отделка</a></li>
+  <li><a href="catalog.html?cat=krepezh">Крепёж</a></li>
+  <li><a href="catalog.html?cat=izolyaciya">Изоляция</a></li>
+</ul></div></nav>
+
+<main>
+<div class="wrap"><div class="doc">
+  <div class="crumbs"><a href="index.html">Главная</a> / <span>Контакты</span></div>
+  <h1 style="margin-top:12px">Контакты</h1>
+  <div class="contact-grid">
+    <div><b>Телефон</b><a href="tel:+375290000000">+375 29 000-00-00</a></div>
+    <div><b>Почта</b><a href="mailto:zakaz@stroybaza.example">zakaz@stroybaza.example</a></div>
+    <div><b>Склад</b>Минск, ул. Примерная, 1</div>
+    <div><b>Часы работы</b>Пн–Сб 8:00–19:00, Вс — выходной</div>
+  </div>
+  <h2>Как заказать</h2>
+  <p>Соберите заказ в корзине или позвоните. Менеджер подтвердит наличие, назовёт цену доставки и согласует время отгрузки.</p>
+  <h2>Реквизиты</h2>
+  <p>Заполняются под клиента: наименование, УНП, адрес, банк. В демо-версии поля оставлены пустыми намеренно.</p>
+</div></div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><b>Стройбаза</b><p>Стройматериалы со склада в Минске: кирпич, смеси, пиломатериалы, металл, кровля, отделка.</p></div>
+      <div><b>Каталог</b><a href="catalog.html?cat=kirpich">Кирпич и блоки</a><a href="catalog.html?cat=smesi">Цемент и смеси</a><a href="catalog.html?cat=les">Пиломатериалы</a><a href="catalog.html">Весь каталог</a></div>
+      <div><b>Покупателю</b><a href="delivery.html">Доставка и оплата</a><a href="cart.html">Корзина</a><a href="contacts.html">Контакты</a></div>
+      <div><b>Связь</b><a href="tel:+375290000000">+375 29 000-00-00</a><a href="mailto:zakaz@stroybaza.example">zakaz@stroybaza.example</a><span style="display:block;padding:4px 0">Пн–Сб 8:00–19:00</span></div>
+    </div>
+    <div class="fbot"><span>© 2026 Стройбаза. Демо-магазин: бренд и телефон меняются в одном файле.</span><span>Цены указаны за единицу товара</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
